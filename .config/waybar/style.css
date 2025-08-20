@@ -1,0 +1,145 @@
+/* Define Colours */
+
+@define-color bg #2E3440;
+@define-color light #D8DEE9;
+@define-color warning #ebcb8b;
+@define-color critical #BF616A;
+@define-color nord_bg #434C5E;
+@define-color nord_bg_blue #546484;
+@define-color nord_light #D8DEE9;
+
+/* Reset */
+* {
+  min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+/* Styles */
+#waybar {
+  background: transparent;
+  color: @light;
+  
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* Left blocks */
+
+#workspaces {
+  background-color: @nord_bg;
+
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+
+/* Workspace Specific */
+
+#workspaces {
+  padding: 2px;
+  margin-right: 0.75rem;
+}
+
+#workspaces button {
+  color: @light;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  background: @nord_bg_blue;
+}
+
+#workspaces .workspace-label {
+    padding-left: 3px;
+    border-top: 1px solid transparent;
+}
+
+/* Center */
+#window {
+  background-color: @nord_bg;
+
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Right */
+#custom-spotify {
+  background-color: @nord_bg;
+  color: @light;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px 0px 0px 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#cava {
+  background-color: @nord_bg;
+  color: @light;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 0px 6px 6px 0px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#pulseaudio-slider, #clock {
+  background-color: @nord_bg;
+
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#pulseaudio-slider {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#pulseaudio-slider slider {
+	min-height: 0px;
+	min-width: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+	min-height: 10px;
+	min-width: 80px;
+	border-radius: 5px;
+	background-color: black;
+}
+
+#pulseaudio-slider highlight {
+	min-width: 10px;
+	border-radius: 5px;
+	background-color: @light;
+}

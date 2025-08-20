@@ -1,0 +1,30 @@
+{
+	"layer": "top",
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["custom/spotify", "cava", "pulseaudio/slider", "clock"],
+	"hyprland/workspaces": {
+		"workspaces-taskbar": {
+			"enable": true,
+			"update-active-window": true,
+			"format": "{icon} {title:.20}",
+			"icon-size": 16
+		}
+	},
+	"cava": {
+		"method": "pipewire",
+		"hide_on_silence": true,
+		"bars": 10,
+		"bar_delimiter": 0,
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+	},
+	"custom/spotify": {
+		"format": "🎵 {}",
+		"exec": "playerctl -p spotify metadata --format '{{ artist }} - {{ title }}' 2>/dev/null || echo 'No music'",
+		"exec-if": "pgrep spotify",
+		"interval": 2,
+		"max-length": 50,
+		"on-click": "playerctl -p spotify play-pause",
+		"on-click-right": "playerctl -p spotify next"
+	}
+}
