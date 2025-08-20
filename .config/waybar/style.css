@@ -18,7 +18,7 @@
 
 /* Styles */
 #waybar {
-  background: transparent;
+  background: @nord_bg;
   color: @light;
   
   margin: 0px;
@@ -80,7 +80,6 @@
   color: @light;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   min-width: 0;
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -91,7 +90,6 @@
   color: @light;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   min-width: 0;
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -102,7 +100,6 @@
 
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
   min-width: 0;
   border: none;
