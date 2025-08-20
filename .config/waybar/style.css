@@ -32,8 +32,6 @@
 
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
   min-width: 0;
   border: none;
@@ -50,7 +48,6 @@
 
 #workspaces button {
   color: @light;
-  border-radius: 5px;
   padding: 0.3rem 0.6rem;
   background: transparent;
   border: none;
@@ -72,8 +69,6 @@
 
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -85,7 +80,6 @@
   color: @light;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 6px 0px 0px 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   min-width: 0;
   border: none;
@@ -97,7 +91,6 @@
   color: @light;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 0px 6px 6px 0px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   min-width: 0;
   border: none;
@@ -109,7 +102,6 @@
 
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
   min-width: 0;
@@ -118,8 +110,6 @@
 }
 
 #pulseaudio-slider {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 #pulseaudio-slider slider {
@@ -134,12 +124,18 @@
 #pulseaudio-slider trough {
 	min-height: 10px;
 	min-width: 80px;
-	border-radius: 5px;
 	background-color: black;
 }
 
 #pulseaudio-slider highlight {
 	min-width: 10px;
-	border-radius: 5px;
 	background-color: @light;
+}
+
+#custom-notification {
+  background-color: @nord_bg;
+  color: @light;
+  min-width: 0;
+  margin: 5px 0;
+    padding-right: 0.5rem;
 }
