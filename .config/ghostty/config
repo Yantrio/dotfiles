@@ -1,0 +1,3 @@
+theme = nord
+keybind = shift+enter=text:\n
+font-family = "Hack Nerd Font Mono"
