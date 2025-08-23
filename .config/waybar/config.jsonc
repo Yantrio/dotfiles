@@ -7,6 +7,7 @@
 		"cava",
 		"pulseaudio/slider",
 		"clock",
+		"tray",
 		"custom/notification"
 	],
 	"hyprland/workspaces": {
