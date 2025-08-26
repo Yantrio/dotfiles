@@ -1,138 +1,76 @@
-/* Define Colours */
-
-@define-color bg #2E3440;
-@define-color light #D8DEE9;
-@define-color warning #ebcb8b;
-@define-color critical #BF616A;
-@define-color nord_bg #434C5E;
-@define-color nord_bg_blue #546484;
-@define-color nord_light #D8DEE9;
-
 /* Reset */
 * {
   min-height: 0;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
 }
 
 /* Styles */
 #waybar {
-  background: @nord_bg;
-  color: @light;
-  
-  margin: 0px;
+  background: @theme_base_color;
+  color: @theme_fg_color;
+ 
+  /* Margin is set in the config, you cant set it in css */
+  border-radius: 8px;
+  border: solid 2px @insensitive_fg_color;
+
   font-weight: 500;
+}
+
+/* All blobks */
+.module {
+  padding: 0px 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 /* Left blocks */
 
-#workspaces {
-  background-color: @nord_bg;
-
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+.modules-left {
+  margin-left: 0.75rem;
 }
 
-
-/* Workspace Specific */
-
 #workspaces {
-  padding: 2px;
   margin-right: 0.75rem;
 }
 
 #workspaces button {
   color: @light;
-  padding: 0.3rem 0.6rem;
   background: transparent;
-  border: none;
-  outline: none;
 }
 
 #workspaces button.active {
-  background: @nord_bg_blue;
-}
-
-#workspaces .workspace-label {
-    padding-left: 3px;
-    border-top: 1px solid transparent;
+  background: @theme_unfocused_bg_color;
+  color: @selected_fg_color;
 }
 
 /* Center */
 #window {
-  background-color: @nord_bg;
-
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  margin: 0 0.75rem;
+  color: @light;
 }
 
 /* Right */
 #custom-spotify {
-  background-color: @nord_bg;
-  color: @light;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 #cava {
   background-color: @nord_bg;
   color: @light;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-#pulseaudio-slider, #clock {
-  background-color: @nord_bg;
-
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 #pulseaudio-slider {
 }
 
 #pulseaudio-slider slider {
-	min-height: 0px;
-	min-width: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
+  background: @selected_bg_color;
 }
 
 #pulseaudio-slider trough {
 	min-height: 10px;
 	min-width: 80px;
-	background-color: black;
-}
-
-#pulseaudio-slider highlight {
-	min-width: 10px;
-	background-color: @light;
+	background-color: @unfocused_bg_color;
 }
 
 #custom-notification {
   background-color: @nord_bg;
   color: @light;
-  min-width: 0;
-  margin: 5px 0;
-    padding-right: 0.5rem;
 }
