@@ -9,4 +9,6 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.pack.go" },
 }
