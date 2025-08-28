@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -10,6 +8,18 @@ return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
+    -- enable servers that you already have installed without mason
+    servers = {
+      "biome",
+    },
+    -- customize language server configuration options passed to `lspconfig`
+    ---@diagnostic disable: missing-fields
+    config = {
+      biome = {
+        -- Use npx to run your project's biome LSP
+        cmd = { "npx", "@biomejs/biome", "lsp-proxy" }
+      },
+    },
     -- Configuration table of features provided by AstroLSP
     features = {
       codelens = true, -- enable/disable codelens refresh on start
@@ -33,9 +43,13 @@ return {
         -- "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
+      filter = function(client) -- filter out null-ls for typescript files to prevent emoji replacement
+        -- Only use Biome LSP for TypeScript formatting, not null-ls
+        if vim.bo.filetype == "typescript" or vim.bo.filetype == "javascript" then
+          return client.name == "biome"
+        end
+        return true
+      end
     },
     -- enable servers that you already have installed without mason
     servers = {
