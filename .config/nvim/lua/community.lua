@@ -11,4 +11,5 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
 }

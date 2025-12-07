@@ -11,13 +11,19 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       "biome",
+      "tofu_ls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       biome = {
         -- Use npx to run your project's biome LSP
-        cmd = { "npx", "@biomejs/biome", "lsp-proxy" }
+        cmd = { "npx", "@biomejs/biome", "lsp-proxy" },
+      },
+      tofu_ls = {
+        cmd = { "tofu-ls", "serve" },
+        filetypes = { "terraform" },
+        root_dir = function(fname) return require("lspconfig.util").root_pattern(".terraform", ".git", "*.tf")(fname) end,
       },
     },
     -- Configuration table of features provided by AstroLSP
@@ -45,21 +51,12 @@ return {
       timeout_ms = 1000, -- default format timeout
       filter = function(client) -- filter out null-ls for typescript files to prevent emoji replacement
         -- Only use Biome LSP for TypeScript formatting, not null-ls
-        if vim.bo.filetype == "typescript" or vim.bo.filetype == "javascript" then
-          return client.name == "biome"
-        end
+        if vim.bo.filetype == "typescript" or vim.bo.filetype == "javascript" then return client.name == "biome" end
         return true
-      end
-    },
-    -- enable servers that you already have installed without mason
-    servers = {
-      -- "pyright"
+      end,
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
-    config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-    },
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
