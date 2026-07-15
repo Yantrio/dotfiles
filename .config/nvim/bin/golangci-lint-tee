@@ -1,0 +1,18 @@
+#!/bin/sh
+# Wrapper used by nvim-lint (lua/plugins/lint.lua): runs the real
+# golangci-lint (passed as $1) and tees its stderr plus run context to a
+# log file, since nvim-lint discards linter stderr and only reports the
+# exit code.
+LOG=/tmp/nvim-golangci-lint.log
+REAL="$1"
+shift
+{
+  echo "=== $(date '+%F %T') cwd=$(pwd)"
+  echo "bin: $REAL"
+  echo "args: $*"
+  echo "go: $(command -v go || echo 'NOT ON PATH')"
+} >>"$LOG"
+"$REAL" "$@" 2>>"$LOG"
+code=$?
+echo "exit: $code" >>"$LOG"
+exit $code
