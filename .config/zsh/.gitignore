@@ -1,0 +1,3 @@
+.zsh_history
+.zcompdump*
+conf.d/99-local.zsh
