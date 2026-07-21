@@ -17,6 +17,7 @@ return {
   opts = {
     sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
     window = {
+      width = 34,
       mappings = {
         ['<C-r>'] = 'noop',
       },
@@ -40,17 +41,25 @@ return {
       },
     },
     default_component_configs = {
+      indent = {
+        with_markers = true,
+        indent_marker = '│',
+        last_indent_marker = '└',
+      },
+      name = {
+        highlight_opened_files = 'all',
+      },
       git_status = {
         symbols = {
-          added     = '✚',
-          modified  = '●',
-          deleted   = '✖',
-          renamed   = '➜',
+          added = '✚',
+          modified = '●',
+          deleted = '✖',
+          renamed = '➜',
           untracked = '★',
-          ignored   = '◌',
-          unstaged  = '○',
-          staged    = '✓',
-          conflict  = '⚠',
+          ignored = '◌',
+          unstaged = '○',
+          staged = '✓',
+          conflict = '⚠',
         },
       },
     },

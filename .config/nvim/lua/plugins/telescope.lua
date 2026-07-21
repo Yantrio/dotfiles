@@ -13,6 +13,17 @@ return {
   },
   config = function()
     require('telescope').setup {
+      defaults = {
+        sorting_strategy = 'ascending',
+        layout_strategy = 'horizontal',
+        layout_config = {
+          horizontal = { prompt_position = 'top', preview_width = 0.55 },
+          width = 0.9,
+          height = 0.85,
+        },
+        borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+        dynamic_preview_title = true,
+      },
       extensions = {
         ['ui-select'] = { require('telescope.themes').get_dropdown() },
       },
@@ -47,12 +58,17 @@ return {
       end,
     })
 
-    vim.keymap.set('n', '<leader>/', function()
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 10,
-        previewer = false,
-      })
-    end, { desc = '[/] Fuzzily search in current buffer' })
+    vim.keymap.set(
+      'n',
+      '<leader>/',
+      function()
+        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+          winblend = 10,
+          previewer = false,
+        })
+      end,
+      { desc = '[/] Fuzzily search in current buffer' }
+    )
 
     vim.keymap.set(
       'n',

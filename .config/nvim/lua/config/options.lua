@@ -7,6 +7,9 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.o.number = true
+vim.o.termguicolors = true
+vim.o.winblend = 5
+vim.o.pumblend = 10
 vim.o.mouse = 'a'
 vim.o.showmode = false
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
