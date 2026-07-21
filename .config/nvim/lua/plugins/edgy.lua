@@ -22,7 +22,7 @@ return {
         ft = 'neo-tree',
         filter = function(buf) return vim.b[buf].neo_tree_source == 'document_symbols' end,
         pinned = true,
-        open = 'Neotree position=bottom document_symbols',
+        open = 'Neotree position=left document_symbols',
       },
     },
   },

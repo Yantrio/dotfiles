@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
     if vim.fn.argc() == 0 then return end
     vim.schedule(function()
       vim.cmd 'Neotree position=left filesystem show'
-      vim.cmd 'Neotree position=bottom document_symbols show'
+      vim.cmd 'Neotree position=left document_symbols show'
       vim.cmd 'wincmd p'
     end)
   end,

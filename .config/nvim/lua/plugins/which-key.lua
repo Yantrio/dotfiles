@@ -11,6 +11,7 @@ return {
       { '<leader>f', group = '[F]ind', mode = { 'n', 'v' } },
       { '<leader>g', group = '[G]it', mode = { 'n', 'v' } },
       { '<leader>l', group = '[L]SP' },
+      { '<leader>p', group = '[P]ackage' },
       { '<leader>b', group = '[B]uffer' },
       { '<leader>u', group = '[U]I toggle' },
       { '<leader>x', group = 'Diagnostics' },

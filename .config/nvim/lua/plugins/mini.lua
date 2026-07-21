@@ -8,7 +8,7 @@ return {
         inside_next = 'ii',
       },
       n_lines = 500,
-   }
+    }
 
     require('mini.surround').setup()
   end,

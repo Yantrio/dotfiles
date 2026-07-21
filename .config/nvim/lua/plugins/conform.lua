@@ -29,9 +29,7 @@ return {
     notify_on_error = false,
     format_on_save = function(bufnr)
       -- Disable with :FormatDisable (global) or :FormatDisable! (buffer)
-      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-        return nil
-      end
+      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then return nil end
       local enabled_filetypes = {
         -- lua = true,
         go = true,
@@ -53,7 +51,7 @@ return {
         handlebars = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
-        return { timeout_ms = 500 }
+        return { timeout_ms = 1500 }
       else
         return nil
       end

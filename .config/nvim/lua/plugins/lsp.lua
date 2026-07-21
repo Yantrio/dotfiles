@@ -3,15 +3,30 @@ return {
   dependencies = {
     { 'mason-org/mason.nvim', opts = {} },
     { 'mason-org/mason-lspconfig.nvim', opts = {} },
+    {
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      opts = {
+        ensure_installed = {
+          'lua-language-server',
+          'gopls',
+          'codebook',
+          'tofu-ls',
+          'stylua',
+          'prettierd',
+          'prettier',
+          'biome',
+          'golangci-lint',
+          'gotestsum',
+        },
+      },
+    },
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
       callback = function(event)
-        local map = function(keys, func, desc, mode)
-          vim.keymap.set(mode or 'n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
+        local map = function(keys, func, desc, mode) vim.keymap.set(mode or 'n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc }) end
 
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
@@ -83,9 +98,12 @@ return {
     -- auto-enables via mason-lspconfig once installed (:Mason). Per-project
     -- custom words go in a `codebook.toml` at the repo root.
 
-    vim.lsp.config('tofu_ls', {
-      cmd = { vim.fn.expand('~/go/bin/tofu-ls'), 'serve' },
-    })
-    vim.lsp.enable('tofu_ls')
+    -- tofu-ls is installed by Mason, but keep startup clean if its install
+    -- failed or it was deliberately removed.
+    local tofu_ls = vim.fn.exepath 'tofu-ls'
+    if tofu_ls ~= '' then
+      vim.lsp.config('tofu_ls', { cmd = { tofu_ls, 'serve' } })
+      vim.lsp.enable 'tofu_ls'
+    end
   end,
 }
