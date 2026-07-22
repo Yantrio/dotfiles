@@ -9,15 +9,13 @@ local prettier = { 'prettierd', 'prettier', stop_after_first = true }
 -- Use Biome if this buffer lives under a biome.json{,c}, else Prettier.
 local function biome_or_prettier(bufnr)
   local dir = vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr))
-  if dir and dir ~= '' and #vim.fs.find({ 'biome.json', 'biome.jsonc' }, { upward = true, path = dir }) > 0 then
-    return { 'biome' }
-  end
+  if dir and dir ~= '' and #vim.fs.find({ 'biome.json', 'biome.jsonc' }, { upward = true, path = dir }) > 0 then return { 'biome' } end
   return prettier
 end
 
 return {
   lua = { 'stylua' },
-  go = { 'gofmt' },
+  go = { 'goimports' },
   javascript = biome_or_prettier,
   javascriptreact = biome_or_prettier,
   typescript = biome_or_prettier,

@@ -17,6 +17,11 @@ return {
           'biome',
           'golangci-lint',
           'gotestsum',
+          'goimports',
+          'gomodifytags',
+          'gotests',
+          'iferr',
+          'impl',
         },
       },
     },
@@ -61,7 +66,12 @@ return {
         end
 
         if client:supports_method('textDocument/inlayHint', event.buf) then
-          map('<leader>uh', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, 'Toggle Inlay [H]ints')
+          vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+          map(
+            '<leader>uh',
+            function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }, { bufnr = event.buf }) end,
+            'Toggle Inlay [H]ints'
+          )
         end
       end,
     })
@@ -97,6 +107,50 @@ return {
     -- ignores identifiers, URLs and acronyms. Needs no overrides — it
     -- auto-enables via mason-lspconfig once installed (:Mason). Per-project
     -- custom words go in a `codebook.toml` at the repo root.
+
+    vim.lsp.config('gopls', {
+      settings = {
+        gopls = {
+          gofumpt = true, -- stricter formatting than gofmt
+          usePlaceholders = true, -- complete func names WITH signature placeholders
+          completeUnimported = true, -- offer symbols from not-yet-imported packages
+          staticcheck = true, -- run staticcheck analyzers as diagnostics
+          semanticTokens = true, -- richer treesitter-independent highlighting
+          matcher = 'Fuzzy',
+          symbolMatcher = 'fuzzy',
+          diagnosticsDelay = '500ms',
+          -- fieldalignment/undeclaredname were removed in recent gopls; omitted
+          -- so gopls (v0.22) doesn't warn about unknown analyzers.
+          analyses = {
+            fillreturns = true,
+            nilness = true,
+            nonewvars = true,
+            shadow = true,
+            unreachable = true,
+            unusedparams = true,
+            unusedwrite = true,
+            useany = true,
+          },
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+          codelenses = {
+            generate = true,
+            regenerate_cgo = true,
+            test = true,
+            tidy = true,
+            upgrade_dependency = true,
+            vendor = true,
+          },
+        },
+      },
+    })
 
     -- tofu-ls is installed by Mason, but keep startup clean if its install
     -- failed or it was deliberately removed.

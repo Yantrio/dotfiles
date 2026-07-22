@@ -16,6 +16,8 @@ return {
       { '<leader>u', group = '[U]I toggle' },
       { '<leader>x', group = 'Diagnostics' },
       { '<leader>t', group = '[T]est' },
+      { '<leader>G', group = '[G]o', mode = { 'n' } },
+      { '<leader>Gt', group = 'Struct [T]ags', mode = { 'n' } },
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   },

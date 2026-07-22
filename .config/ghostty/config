@@ -1,3 +1,4 @@
 theme = Kanagawa Wave
 keybind = shift+enter=text:\n
 font-family = "Hack Nerd Font Mono"
+font-family = "Symbols Nerd Font Mono"
