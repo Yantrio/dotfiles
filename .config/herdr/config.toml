@@ -4,17 +4,6 @@ onboarding = false
 name = "kanagawa"
 auto_switch = false
 
-# DIAGNOSTIC round 3 — figure out which slot drives the selected workspace/agent
-# highlight. Every remaining untested slot gets a distinct bright color; whichever
-# one lands ON THE HIGHLIGHT is the slot to override.
 [theme.custom]
 surface_dim = "#727169"   # keep — borders
-
-# candidates for the highlight (distinct bright colors):
-surface0    = "#FF0000"   # red
-surface1    = "#00FF00"   # green
-subtext0    = "#FFFF00"   # yellow
-mauve       = "#FF00FF"   # magenta
-peach       = "#00FFFF"   # cyan
-teal        = "#FF8800"   # orange
-accent      = "#FFFFFF"   # white — is default-bright actually white?
+text        = "#FF0000"   # RED — diagnostic: if the highlight bg goes red too, we found it
