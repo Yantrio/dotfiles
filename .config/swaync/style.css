@@ -1,16 +1,16 @@
 :root {
 	--noti-border-color: rgba(255, 255, 255, 0.15);
-	--noti-bg: #2e3440;
-	--cc-bg: #2e3440;
+	--noti-bg: #1F1F28;
+	--cc-bg: #1F1F28;
 	--noti-bg-alpha: 0.8;
-	--noti-bg-darker: rgb(38, 38, 38);
-	--noti-bg-hover: rgb(56, 56, 56);
+	--noti-bg-darker: #2A2A37;
+	--noti-bg-hover: #2A2A37;
 	--noti-bg-focus: rgba(68, 68, 68, 0.6);
 	--noti-close-bg: rgb(78, 78, 78);
 	--noti-close-bg-hover: rgb(94, 94, 94);
-	--text-color: rgb(255, 255, 255);
+	--text-color: #DCD7BA;
 	--text-color-disabled: rgb(150, 150, 150);
-	--bg-selected: rgb(0, 128, 255);
+	--bg-selected: #7E9CD8;
 	--notification-icon-size: 64px;
 	--notification-app-icon-size: calc(var(--notification-icon-size) / 3);
 	--notification-group-icon-size: 32px;
@@ -57,7 +57,7 @@
 	border: 1px solid var(--noti-border-color);
 	padding: 0;
 	transition: background 0.15s ease-in-out;
-	background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+	background: var(--noti-bg);
 }
 
 .notification-row .notification-background .notification.low {
@@ -77,7 +77,7 @@
 	.notification
 	.notification-default-action {
 	/* The large action that also displays the notification summary and body */
-	padding: 4px;
+	padding: 12px 14px;
 	margin: 0;
 	box-shadow: none;
 	background: transparent;
@@ -252,7 +252,7 @@
 	.inline-reply
 	.inline-reply-button {
 	margin-left: 4px;
-	background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+	background: var(--noti-bg);
 	border: 1px solid var(--noti-border-color);
 	border-radius: 12px;
 	color: var(--text-color);
@@ -363,7 +363,7 @@
 }
 
 .notification-group.collapsed .notification-row .notification {
-	background-color: rgba(var(--noti-bg), 1);
+	background-color: var(--noti-bg);
 }
 
 .notification-group.collapsed .notification-row:not(:last-child) {
@@ -557,7 +557,7 @@
 .widget-menubar {
 	/* The revealer buttons */
 	/* .AnyName { Name defined in config after #
-    background-color: rgba(var(--noti-bg), 1.0);
+    background-color: var(--noti-bg);
     padding: 8px;
     margin: 8px;
     border-radius: 12px;
