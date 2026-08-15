@@ -10,7 +10,7 @@ The **yantrio-skills** plugins below (`pwa-stack`, `bws-secrets`, `proxmox-api`,
 
 1. **All new repos are private by default.** Bootstrap with:
    ```
-   gh repo create <name> --private --clone --source=. --push
+   gh repo create <name> --private --source=. --push
    ```
    Making a repo public is an explicit decision — never the default.
 
