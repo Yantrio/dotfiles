@@ -19,4 +19,9 @@ for file in \
   [[ -r "$ZSH_CONFIG_DIR/$file.zsh" ]] && source "$ZSH_CONFIG_DIR/$file.zsh"
 done
 
+# Per-machine local overrides & secrets (gitignored)
+for file in "$ZSH_CONFIG_DIR"/conf.d/*.zsh(N); do
+  source "$file"
+done
+
 unset file

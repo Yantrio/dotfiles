@@ -1,3 +1,4 @@
 .zsh_history
 .zcompdump*
-conf.d/99-local.zsh
+# Per-machine local overrides & secrets — everything in conf.d/ is machine-local
+conf.d/
