@@ -6,4 +6,5 @@ auto_switch = false
 
 [theme.custom]
 surface_dim = "#727169"   # keep — borders
-text        = "#FF0000"   # RED — diagnostic: if the highlight bg goes red too, we found it
+text        = "#DCD7BA"   # restore Fuji White so text is readable
+panel_bg    = "#FF0000"   # RED — if the sidebar bg or highlight goes red, this is the slot
