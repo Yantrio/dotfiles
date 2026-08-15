@@ -5,7 +5,10 @@ name = "kanagawa"
 auto_switch = false
 
 [theme.custom]
-# herdr's built-in "kanagawa" theme sets `surface_dim` too close to the pane
-# background, making pane dividers invisible. Bumping to Fuji Grey so they show.
-# Empirically verified: `surface_dim` is the slot that drives the border line.
-surface_dim = "#727169"   # Fuji Grey — visible but tasteful
+# herdr's built-in "kanagawa" maps surface_dim too close to the pane background,
+# making pane dividers invisible. Bumping to Fuji Grey so they show.
+surface_dim = "#727169"   # Fuji Grey — pane divider
+
+# Selected-workspace / selected-agent highlight is too bright at the default
+# Crystal Blue; use Roji Blue for a subtler muted-blue selection.
+accent      = "#658594"   # Roji Blue — sidebar/workspace/agent highlight
