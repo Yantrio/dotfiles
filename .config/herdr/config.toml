@@ -1,0 +1,56 @@
+[ui]
+agent_panel_sort = "spaces"
+
+[[keys.command]]
+key = "f13"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 1"
+description = "Focus workspace 1"
+
+[[keys.command]]
+key = "f14"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 2"
+description = "Focus workspace 2"
+
+[[keys.command]]
+key = "f15"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 3"
+description = "Focus workspace 3"
+
+[[keys.command]]
+key = "f16"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 4"
+description = "Focus workspace 4"
+
+[[keys.command]]
+key = "f17"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 5"
+description = "Focus workspace 5"
+
+[[keys.command]]
+key = "f18"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 6"
+description = "Focus workspace 6"
+
+[[keys.command]]
+key = "f19"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 7"
+description = "Focus workspace 7"
+
+[[keys.command]]
+key = "f20"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 8"
+description = "Focus workspace 8"
+
+[[keys.command]]
+key = "f21"
+type = "shell"
+command = "$HERDR_BIN_PATH workspace focus 9"
+description = "Focus workspace 9"
