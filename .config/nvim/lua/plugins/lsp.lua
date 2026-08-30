@@ -23,6 +23,9 @@ return {
           'iferr',
           'impl',
         },
+        -- Every entry is a Mason package name. mason-tool-installer's
+        -- mason-lspconfig mapper is incompatible with mason-lspconfig v2.
+        integrations = { ['mason-lspconfig'] = false },
       },
     },
     { 'j-hui/fidget.nvim', opts = {} },
